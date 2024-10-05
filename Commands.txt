@@ -1,0 +1,20 @@
+// use to create migration 
+typeorm migration:create src/migration/CreateUsersTable
+
+// run migration 
+npx typeorm migration:run -d src/data-source-cli.js
+
+// run seeders
+npm run seed
+
+// use to revert  migration
+npx typeorm migration:revert -d src/data-source-cli.js
+
+
+// Create an auth module with the necessary services and controllers
+nest generate module auth
+nest generate service auth
+nest generate controller auth
+
+// run test case 
+npm run test:e2e
